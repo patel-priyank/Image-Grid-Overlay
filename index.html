@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Grid Overlay</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Image Grid Overlay</h1>
+
+      <div class="controls">
+        <div class="control-row">
+          <div class="control-group">
+            <button id="uploadButton">Choose Image</button>
+            <input type="file" id="imageUpload" accept="image/*" />
+          </div>
+        </div>
+
+        <div class="control-row">
+          <div class="control-group">
+            <label for="rows">Rows</label>
+            <select id="rows">
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="columns">Columns</label>
+            <select id="columns">
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <div class="control-group">
+            <label for="gridColor">Grid color</label>
+            <input type="color" id="gridColor" value="#ff0000" />
+          </div>
+
+          <div class="control-group">
+            <label for="lineWidth">Line width (px)</label>
+            <select id="lineWidth">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="canvas-container">
+        <div id="noImage" class="no-image">Please upload an image to begin</div>
+        <canvas id="imageCanvas"></canvas>
+      </div>
+    </div>
+  </body>
+
+  <script src="./script.js"></script>
+</html>
