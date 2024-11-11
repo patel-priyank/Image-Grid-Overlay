@@ -1,6 +1,7 @@
 const canvas = document.getElementById('imageCanvas');
 const ctx = canvas.getContext('2d');
 const uploadButton = document.getElementById('uploadButton');
+const downloadButton = document.getElementById('downloadButton');
 const imageUpload = document.getElementById('imageUpload');
 const noImageDiv = document.getElementById('noImage');
 let currentImage = null;
@@ -11,6 +12,7 @@ const inputs = document.querySelectorAll('select, input[type="color"]');
 // Event Listeners
 uploadButton.addEventListener('click', () => imageUpload.click());
 imageUpload.addEventListener('change', handleImageUpload);
+downloadButton.addEventListener('click', downloadImage);
 
 // Add change event listener to all inputs
 inputs.forEach((input) => {
@@ -30,6 +32,7 @@ function handleImageUpload(e) {
         updateGrid();
         noImageDiv.style.display = 'none';
         canvas.style.display = 'block';
+        downloadButton.disabled = false;
       };
       img.src = event.target.result;
     };
@@ -69,6 +72,13 @@ function updateGrid() {
     ctx.lineTo(canvas.width, i * rowHeight);
     ctx.stroke();
   }
+}
+
+function downloadImage() {
+  const link = document.createElement('a');
+  link.download = 'grid-overlay.png';
+  link.href = canvas.toDataURL('image/png');
+  link.click();
 }
 
 // Initialize

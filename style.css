@@ -83,6 +83,11 @@ button:hover {
   background-color: #1976d2;
 }
 
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
 .canvas-container {
   position: relative;
   max-width: 100%;
@@ -106,4 +111,13 @@ canvas {
   text-align: center;
   color: #666;
   background-color: #f8f8f8;
+}
+
+/* Download button specific styles */
+#downloadButton {
+  background-color: #4caf50;
+}
+
+#downloadButton:not(:disabled):hover {
+  background-color: #45a049;
 }
